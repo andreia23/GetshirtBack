@@ -1,12 +1,10 @@
 package br.edu.ifpb.girls.getshirt.api.repositories;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.edu.ifpb.girls.getshirt.api.model.Cliente;
+import br.edu.ifpb.girls.getshirt.api.model.Pedido;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
 //    public List<Cliente> findByIdadeAndCpf(Integer idade, String cpf);
 //

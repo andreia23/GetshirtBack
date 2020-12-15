@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifpb.girls.getshirt.api.model.Pedido;
 import br.edu.ifpb.girls.getshirt.api.service.PedidoService;
 
+/**
+ * @author andreia
+ *
+ */
 @RestController
 @RequestMapping("/")
 public class PedidoController {

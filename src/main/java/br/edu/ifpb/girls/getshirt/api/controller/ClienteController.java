@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifpb.girls.getshirt.api.model.Cliente;
 import br.edu.ifpb.girls.getshirt.api.service.ClienteService;
 
+/**
+ * @author andreia
+ *
+ */
 @RestController
 @RequestMapping("/")
 public class ClienteController {
@@ -22,27 +26,27 @@ public class ClienteController {
 	@Autowired
 	private ClienteService ClienteService;
 
-	@GetMapping("/Clientes")
+	@GetMapping("/clientes")
 	public List<Cliente> getClientes() {
 		return this.ClienteService.getClientes();
 	}
 
-	@GetMapping("/Clientes/{id}")
+	@GetMapping("/clientes/{id}")
 	public Cliente getClientePorId(@PathVariable("id") Long idCliente) {
 		return this.ClienteService.getClientePorId(idCliente);
 	}
 
-	@PostMapping("/Clientes")
+	@PostMapping("/clientes")
 	public Cliente inserirCliente(@RequestBody Cliente cliente) {
 		return this.ClienteService.inserirCliente(cliente);
 	}
 
-	@PutMapping("/Clientes/{id}")
+	@PutMapping("/clientes/{id}")
 	public Cliente atualizarCliente(@RequestBody Cliente cliente) {
 		return this.ClienteService.atualizarCliente(cliente);
 	}
 
-	@DeleteMapping("/Clientes/{id}")
+	@DeleteMapping("/clientes/{id}")
 	public void apagarCliente(@PathVariable("id") Long id) {
 		this.ClienteService.apagarCliente(id);
 	}

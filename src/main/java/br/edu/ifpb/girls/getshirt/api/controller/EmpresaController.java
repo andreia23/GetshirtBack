@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.edu.ifpb.girls.getshirt.api.model.Cliente;
 import br.edu.ifpb.girls.getshirt.api.model.Empresa;
 import br.edu.ifpb.girls.getshirt.api.service.EmpresaService;
 
@@ -34,6 +35,11 @@ public class EmpresaController {
 	@GetMapping("/empresas/{id}")
 	public Empresa getEmpresaPorId(@PathVariable("id") Long idEmpresa) {
 		return this.empresaService.getEmpresaPorId(idEmpresa);
+	}
+
+	@GetMapping("/empresas/{email}/{senha}")
+	public Empresa login(@PathVariable("email") String email, @PathVariable("senha") String senha) {
+		return this.empresaService.login(email, senha);
 	}
 
 	@PostMapping("/empresas")

@@ -36,6 +36,11 @@ public class ClienteController {
 		return this.ClienteService.getClientePorId(idCliente);
 	}
 
+	@GetMapping("/clientes/{email}/{senha}")
+	public Cliente login(@PathVariable("email") String email,@PathVariable("senha") String senha ){
+		return this.ClienteService.login(email, senha);
+	}
+
 	@PostMapping("/clientes")
 	public Cliente inserirCliente(@RequestBody Cliente cliente) {
 		return this.ClienteService.inserirCliente(cliente);

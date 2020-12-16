@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifpb.girls.getshirt.api.exception.ResourceNotFoundException;
+import br.edu.ifpb.girls.getshirt.api.model.Cliente;
 import br.edu.ifpb.girls.getshirt.api.model.Empresa;
 import br.edu.ifpb.girls.getshirt.api.repositories.EmpresaRepository;
 
@@ -41,5 +42,9 @@ public class EmpresaService {
 
 	public void apagarEmpresa(Long id) {
 		this.empresaRepository.deleteById(id);
+	}
+	
+	public Empresa login(String email, String senha) {
+		return (this.empresaRepository.findByEmailAndSenha(email, senha));
 	}
 }

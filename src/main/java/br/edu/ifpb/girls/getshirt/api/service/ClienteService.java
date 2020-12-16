@@ -28,18 +28,21 @@ public class ClienteService {
 		Cliente ClienteInserido = this.ClienteRepository.save(cliente);
 		return ClienteInserido;
 	}
-	
+
 	public Cliente atualizarCliente(Cliente cliente) {
 		Optional<Cliente> ClienteDb = this.ClienteRepository.findById(cliente.getIdCliente());
-		if(ClienteDb.isPresent()) {
+		if (ClienteDb.isPresent()) {
 			return ClienteRepository.save(cliente);
-		}else {
+		} else {
 			throw new ResourceNotFoundException("Record not found with id : " + cliente.getIdCliente());
 		}
 	}
 
-
 	public void apagarCliente(Long id) {
 		this.ClienteRepository.deleteById(id);
+	}
+
+	public Cliente login(String email, String senha) {
+		return (this.ClienteRepository.findByEmailAndSenha(email, senha));
 	}
 }
